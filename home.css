@@ -1,0 +1,162 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid gray;
+  background-color: rgb(5, 71, 158);
+}
+
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  background-color: rgb(185, 167, 143, 0.5);
+  padding: 3px 7px;
+  border-radius: 10px;
+  color: aliceblue;
+  font-weight: bolder;
+}
+
+header a:hover {
+  background-color: aliceblue;
+  color: rgb(185, 167, 143);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(rgb(5, 71, 158), rgb(11, 9, 129), rgb(37, 5, 110));
+  padding: 17rem 0;
+}
+
+.welcome h1,
+.welcome p {
+  text-align: center;
+  width: 80%;
+}
+
+.welcome h1 {
+  font-size: 4rem;
+  color: aliceblue;
+  margin-bottom: 1rem;
+}
+
+.welcome p {
+  font-size: 20px;
+  color: rgb(186, 204, 228);
+  direction: ltr;
+  text-align: justify;
+}
+
+strong {
+  display: inline-block;
+  background-color: rgb(163, 3, 142);
+}
+
+.general-direction {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 7rem 20px;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.direction {
+  display: flex;
+  gap: 20px;
+  border: 3px solid rgb(163, 3, 142);
+  align-items: center;
+  min-height: 250px;
+  padding: 0 50px;
+  border-radius: 75px;
+}
+
+.direction p{
+  flex: 2;
+  font-size: 20px;
+}
+
+.direction button{
+  flex: 1;
+  width: 75px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid white;
+  background-color: rgb(163, 3, 142);
+  font-size: 18px;
+  color: aliceblue;
+  font-weight: bolder;
+}
+
+.direction button:hover {
+  background-color: aliceblue;
+  color: rgb(163, 3, 142);
+  border: 2px solid rgb(163, 3, 142);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(2, 13, 77);
+  width: 100%;
+  height: 200px;
+  justify-content: space-between;
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+}
+
+.social a {
+  color: whitesmoke;
+  font-size: 25px;
+}
+
+.copyright {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: aliceblue;
+}
