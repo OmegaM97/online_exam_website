@@ -6,12 +6,12 @@
   <title>Exam Room</title>
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="exam-room.css">
-  <link rel="icon" href="photos/exam-web-icon.png">
+  <link rel="icon" href="data/photos/exam-web-icon.png">
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="photos/exam-web-icon.png" alt="">
+      <img src="data/photos/exam-web-icon.png" alt="">
     </div>
 
     <nav>
@@ -25,7 +25,7 @@
   <main>
     <div class="welcome-examroom">
       <h1>Wellcome..</h1>
-      <p>to the exam room where you can take the exam. before moving to anything we recommend reading the <strong>instructions</strong> to get the best exprience</p>
+      <p>to the exam room where you can take the exam. before moving to anything we recommend reading the <strong class="toggle-instruction">instructions</strong> to get the best exprience</p>
 
       <div class="instruction">
         <ul>
@@ -41,36 +41,7 @@
     </div>
 
     <div class="question-holder">
-      <div class="question">
-        <p class="number">1,</p>
-        <p>which on of the following is NOT correct about the water</p>
-      </div>
-      <div class="answer">
-        <div class="choice-holder">
-          <input type="radio" data-choice-aplha="A" id="choice-A" name="choice">
-          <label for="choice">It's oderless</label>
-        </div>
-
-        <div class="choice-holder">
-          <input type="radio" data-choice-aplha="B" id="choice-B" name="choice">
-          <label for="choice-B">We can't live more than 3 weeks without water</label>
-        </div>
-
-        <div class="choice-holder">
-          <input type="radio" data-choice-aplha="C" id="choice-C" name="choice">
-          <label for="choice-C">It's colorless</label>
-        </div>
-
-        <div class="choice-holder">
-          <input type="radio" data-choice-aplha="D" id="choice-D" name="choice">
-          <label for="choice-D">It has sour taste</label>
-        </div>
-      </div>
-
-      <div class="navigate">
-        <button>Previous</button>
-        <button>Next</button>
-      </div>
+      
     </div>
 
     <div class="result">
@@ -87,5 +58,7 @@
       </div>
     </div>
   </main>
+
+  <script src="exam-room.js" type="module"></script>
 </body>
 </html>

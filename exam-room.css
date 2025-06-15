@@ -83,6 +83,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 1rem;
 }
 
 .choice-holder {
@@ -92,6 +93,7 @@ main {
 .navigate {
   display: flex;
   justify-content: space-between;
+  margin-top: 3rem;
 }
 
 .navigate button {
