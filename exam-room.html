@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Room</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="exam-room.css">
+  <link rel="icon" href="photos/exam-web-icon.png">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="photos/exam-web-icon.png" alt="">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Customize</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="welcome-examroom">
+      <h1>Wellcome..</h1>
+      <p>to the exam room where you can take the exam. before moving to anything we recommend reading the <strong>instructions</strong> to get the best exprience</p>
+
+      <div class="instruction">
+        <ul>
+          <li>You can start any exam directly without logging in or creating an account</li>
+          <li>All your progress and answers are stored only during your active session. Once you leave or refresh the page, everything is cleared.</li>
+          <li>Choose the correct option for each question or type the answer if required</li>
+          <li>Use “Next” and “Previous” buttons to navigate through the exam.</li>
+          <li>Once done, click “Submit Exam” to see your score immediately.</li>
+          <li>Results are displayed instantly but are not saved or retrievable after you leave.</li>
+        </ul>
+      </div>
+      <button class="start-exam">Start</button>
+    </div>
+
+    <div class="question-holder">
+      <div class="question">
+        <p class="number">1,</p>
+        <p>which on of the following is NOT correct about the water</p>
+      </div>
+      <div class="answer">
+        <div class="choice-holder">
+          <input type="radio" data-choice-aplha="A" id="choice-A" name="choice">
+          <label for="choice">It's oderless</label>
+        </div>
+
+        <div class="choice-holder">
+          <input type="radio" data-choice-aplha="B" id="choice-B" name="choice">
+          <label for="choice-B">We can't live more than 3 weeks without water</label>
+        </div>
+
+        <div class="choice-holder">
+          <input type="radio" data-choice-aplha="C" id="choice-C" name="choice">
+          <label for="choice-C">It's colorless</label>
+        </div>
+
+        <div class="choice-holder">
+          <input type="radio" data-choice-aplha="D" id="choice-D" name="choice">
+          <label for="choice-D">It has sour taste</label>
+        </div>
+      </div>
+
+      <div class="navigate">
+        <button>Previous</button>
+        <button>Next</button>
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="inner-result">
+        <h1>Result</h1>
+        <div class="score-grade">
+          <p class="score">Score: 20/20</p>
+          <p class="grade">Grade: A</p>
+        </div>
+        <p class="remark">
+          Well Done!
+        </p>
+        <button>Try again</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

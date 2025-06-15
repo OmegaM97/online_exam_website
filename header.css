@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid gray;
+  background-color: rgb(5, 71, 158);
+}
+
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  background-color: rgb(185, 167, 143, 0.5);
+  padding: 3px 7px;
+  border-radius: 10px;
+  color: aliceblue;
+  font-weight: bolder;
+}
+
+header a:hover {
+  background-color: aliceblue;
+  color: rgb(185, 167, 143);
+}

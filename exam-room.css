@@ -1,0 +1,153 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(5, 71, 158), rgb(11, 9, 129), rgb(37, 5, 110));
+}
+
+.welcome-examroom,
+.question-holder,
+.result {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  max-width: 700px;
+  min-width: 300px;
+  min-height: 300px;
+  padding: 50px;
+  background-color: white;
+  gap: 45px;
+}
+
+.welcome-examroom {
+  align-items: center;
+}
+
+.welcome-examroom h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+.welcome-examroom p {
+  font-size: 22px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.welcome-examroom strong {
+  display: inline-block;
+  background-color: rgb(163, 3, 142);
+  color: aliceblue;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.welcome-examroom button {
+  width: 100px;
+  height: 35px;
+  font-size: 20px;
+  border: 2px solid white;
+  background-color: rgb(163, 3, 142);
+  color: aliceblue;
+  border-radius: 20px;
+}
+
+.welcome-examroom button:hover {
+  background-color: aliceblue;
+  color: rgb(163, 3, 142);
+  border: 2px solid rgb(163, 3, 142);
+}
+
+.instruction {
+  padding: 20px 50px;
+  display: none;
+}
+
+.instruction ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.question {
+  font-size: 27px;
+  font-weight: bold;
+  display: flex;
+  gap: 20px;
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.choice-holder {
+  font-size: 23px;
+}
+
+.navigate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigate button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  background-color: rgb(163, 3, 142);
+  color: aliceblue;
+}
+
+.navigate button:hover {
+  background-color: aliceblue;
+  color: rgb(163, 3, 142);
+  border: 2px solid rgb(163, 3, 142);
+}
+
+.inner-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.inner-result h1 {
+  font-size: 40px;
+}
+
+.score-grade {
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.remark {
+  font-size: 19px;
+  text-align: center;
+}
+
+.result button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  background-color: rgb(163, 3, 142);
+  color: aliceblue;
+}
+
+.result button:hover {
+  background-color: aliceblue;
+  color: rgb(163, 3, 142);
+  border: 2px solid rgb(163, 3, 142);
+}
+
+.question-holder {
+  display: none;
+}
+
+.result {
+  display: none;
+}
