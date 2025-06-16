@@ -119,13 +119,86 @@ function submitAnswer() {
           ${calculateRmark()}!
         </p>
         <a href=""><button href>Try again</button></a>
+        <p class="score-grade">You can see the details of your result <strong class="here js-here">HERE</strong></p>
+        <div class="detail-result"></div>
       </div>`;
 
       const resultcontainer = document.querySelector('.result');
       resultcontainer.innerHTML = innerHTML;
 
+      const correctAnswer = document.querySelector('.detail-result');
+      correctAnswer.innerHTML = generateCorrectAnswer();
+
+      const here = document.querySelector('.js-here');
+      here.addEventListener('click',() => {
+
+        if (getComputedStyle(correctAnswer).display === "none") {
+          correctAnswer.style.display = "block";
+        } else {
+          correctAnswer.style.display = "none";
+        }
+
+      });
+
+      colorCorrectAnswer();
       displayResult();
       removeQuestion();
+}
+
+function generateCorrectAnswer() {
+  let innerHTML = '';
+  questions.forEach((question, index) => {
+    let html = `
+    <div class="question">
+        <p class="number">${index + 1},</p>
+        <p>${question.question}</p>
+      </div>
+      <div class="answer result-answer">
+        <div class="choice-holder js-choice-holder-A" data-choice-aplha="A">
+          <p>${question.choice.A}</p>
+        </div>
+
+        <div class="choice-holder js-choice-holder-B" data-choice-aplha="B">
+          <p>${question.choice.B}</p>
+        </div>
+
+        <div class="choice-holder js-choice-holder-C" data-choice-aplha="C">
+          <p>${question.choice.C}</p>
+        </div>
+
+        <div class="choice-holder js-choice-holder-D" data-choice-aplha="D">
+          <p>${question.choice.D}</p>
+        </div>
+      </div>`;
+
+      innerHTML += html;
+  });
+
+  return innerHTML;
+}
+
+function colorCorrectAnswer() {
+  let questionNumber = 0; 
+  questions.forEach((question) => {
+    if(question.givenAnswer) {
+      if(question.correctAnswer === question.givenAnswer) {
+
+        document.querySelectorAll(`.js-choice-holder-${question.correctAnswer}`)[questionNumber].style.backgroundColor = "rgb(108, 221, 108)";
+
+      } else if (question.correctAnswer !== question.givenAnswer) {
+
+        document.querySelectorAll(`.js-choice-holder-${question.correctAnswer}`)[questionNumber].style.backgroundColor = "rgb(108, 221, 108)";
+        document.querySelectorAll(`.js-choice-holder-${question.givenAnswer}`)[questionNumber].style.backgroundColor = "rgb(236, 137, 120)";
+
+      } 
+    } else {
+
+      document.querySelectorAll(`.js-choice-holder-${question.correctAnswer}`)[questionNumber].style.backgroundColor = "rgb(243, 188, 86)";
+
+    }
+
+    questionNumber++;
+  });
 }
 
 function calculateRmark() {
@@ -134,7 +207,7 @@ function calculateRmark() {
   if (score >= 0.50 *(questions.length)) {
     return 'Passed';
   } else {
-    return 'Faild';
+    return 'Failed';
   }
 }
 
@@ -175,14 +248,12 @@ function timer() {
     `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     
     timeLeft--;
-
-    console.log(timeLeft);
     
     if (timeLeft < 0) {
       clearInterval(countdown);
       timerElement.textContent = "Time's up!";
       setTimeout(() => {
-        /* submitAnswer(); */
+        submitAnswer();
       }, 2000);
     }
   }, 1000);
