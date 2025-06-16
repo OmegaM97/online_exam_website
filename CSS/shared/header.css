@@ -31,7 +31,7 @@ header ul {
   list-style-type: none;
 }
 
-header a {
+nav a {
   text-decoration: none;
   font-size: 20px;
   display: block;
@@ -42,7 +42,7 @@ header a {
   font-weight: bolder;
 }
 
-header a:hover {
+nav a:hover {
   background-color: aliceblue;
   color: rgb(185, 167, 143);
 }

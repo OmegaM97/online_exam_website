@@ -1,4 +1,4 @@
-import { questions } from "./data/questions.js";
+import { questions } from "../data/questions.js";
 
 const instruction = document.querySelector('.toggle-instruction');
 const instructionContainer = document.querySelector('.instruction');
