@@ -54,7 +54,8 @@ function renderQuestions(number) {
              <button class="previous-button js-submit">Submit</button>`
              : `<button class="previous-button js-previous-button">Previous</button>
              <button class="next-button">Next</button>` }
-      </div>`
+      </div>
+      <div class="attempt-error"></div>`
 
   const questionHolder = document.querySelector('.question-holder')
 
@@ -83,7 +84,7 @@ function renderQuestions(number) {
   if (questionNum + 1 === questions.length) {
     const submitBtn = document.querySelector('.js-submit');
     submitBtn.addEventListener('click', () => {
-      submitAnswer();
+      checkAttempt();
     });
   }
 
@@ -106,6 +107,32 @@ startBtn.addEventListener('click', () => {
   renderQuestions(questionNum);
   timer();
 });
+
+function checkAttempt() {
+  const attemptError = document.querySelector('.attempt-error')
+  if(attemptError.innerHTML) {
+    submitAnswer();
+  } else {
+    let unAttempt = 0;
+    let unattemptQuestions = '';
+    questions.forEach((question, index) => {
+      if(!question.givenAnswer) {
+        unAttempt++
+        unattemptQuestions += `${index + 1}, `;
+      }
+    });
+
+    if(unAttempt) {
+      attemptError.innerHTML = `<div class="please-attempt">Please attempt all the questions!</div>
+      <div class="unattempt-questions">Question: <strong>${unattemptQuestions}</strong> are/is not Attempted.</div>
+      <div>If you click again it will be submitted</div>`
+    } else {
+      submitAnswer();
+    }
+  }
+
+  
+}
 
 function submitAnswer() {
   let innerHTML = `

@@ -200,3 +200,12 @@ input:checked + label{
 .detail-result {
   display: none;
 }
+
+.attempt-error {
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
