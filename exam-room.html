@@ -3,54 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exam Room</title>
+  <title>Exam Room | Omega Exam Portal</title>
   <link rel="stylesheet" href="CSS/shared/header.css">
   <link rel="stylesheet" href="CSS/single/exam-room.css">
   <link rel="icon" href="data/photos/exam-web-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
+  <div class="page-transition"></div>
+  
+  <header class="sticky-header">
     <div class="logo">
-      <a href="index.html"><img src="data/photos/exam-web-icon.png" alt=""></a>
+      <a href="index.html" class="logo-link">
+        <img src="data/photos/exam-web-icon.png" alt="Omega Exam Logo">
+        <span class="logo-text">Omega Exam</span>
+      </a>
     </div>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="customize.html">Customize</a></li>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link hover-underline">Home</a></li>
+        <li><a href="customize.html" class="nav-link hover-underline">Customize</a></li>
       </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <div class="welcome-examroom">
-      <h1>Wellcome..</h1>
-      <p>to the exam room where you can take the exam. before moving to anything we recommend reading the <strong class="toggle-instruction here">instructions</strong> to get the best exprience</p>
-
-      <div class="instruction">
-        <ul>
-          <li>You can start any exam directly without logging in or creating an account</li>
-          <li>All your progress and answers are stored only during your active session. Once you leave or refresh the page, everything is cleared.</li>
-          <li>Choose the correct option for each question or type the answer if required</li>
-          <li>Use “Next” and “Previous” buttons to navigate through the exam.</li>
-          <li>Once done, click “Submit Exam” to see your score immediately.</li>
-          <li>Results are displayed instantly but are not saved or retrievable after you leave.</li>
-          <li>after completion you can also see the details of your score with their corresponding answers</li>
-          <li>On the details of your score if only green appears it means you attempted the question and got it</li>
-          <li>Red and green means your answer was the red, and the correct answer is the green one</li>
-          <li>If orange appeared that means you didn't attempted the question and the correct answer is the orange one</li>
-        </ul>
+  <main class="exam-container">
+    <!-- Welcome Screen -->
+    <section class="welcome-screen active-screen">
+      <div class="welcome-card">
+        <div class="welcome-header">
+          <h1 class="welcome-title">Welcome to Your Exam</h1>
+          <div class="exam-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+        </div>
+        
+        <p class="welcome-text">Before you begin, please review the instructions carefully to ensure the best testing experience.</p>
+        
+        <div class="instruction-toggle">
+          <button class="toggle-instruction btn btn-outline">
+            <i class="fas fa-book-open"></i> View Instructions
+          </button>
+        </div>
+        
+        <div class="instruction-panel">
+          <div class="instruction-header">
+            <h3>Exam Guidelines</h3>
+            <button class="close-instruction">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <ul class="instruction-list">
+            <li>
+              <i class="fas fa-user-clock"></i>
+              <span>No login required - start immediately</span>
+            </li>
+            <li>
+              <i class="fas fa-exclamation-triangle"></i>
+              <span>Progress is session-only - refreshing clears all data</span>
+            </li>
+            <li>
+              <i class="fas fa-mouse-pointer"></i>
+              <span>Select correct answers or type responses when needed</span>
+            </li>
+            <li>
+              <i class="fas fa-arrows-alt-h"></i>
+              <span>Navigate with "Next" and "Previous" buttons</span>
+            </li>
+            <li>
+              <i class="fas fa-paper-plane"></i>
+              <span>Submit when finished for instant scoring</span>
+            </li>
+            <li>
+              <i class="fas fa-chart-bar"></i>
+              <span>Detailed results show correct/incorrect answers</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>Green = Correct answer</span>
+            </li>
+            <li>
+              <i class="fas fa-times-circle"></i>
+              <span>Red = Your incorrect answer</span>
+            </li>
+            <li>
+              <i class="fas fa-question-circle"></i>
+              <span>Orange = Unattempted question (correct answer shown)</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="welcome-actions">
+          <button class="start-exam btn btn-primary pulse">
+            <i class="fas fa-play"></i> Begin Exam
+          </button>
+        </div>
       </div>
-      <button class="start-exam">Start</button>
-    </div>
+    </section>
 
-    <div class="question-holder">
-    </div>
+    <!-- Exam Interface -->
+    <section class="exam-interface">
+      <div class="exam-header">
+        <div class="exam-progress">
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <span class="progress-text">Question <span class="current-q">1</span> of <span class="total-q">10</span></span>
+        </div>
+        
+        <div class="exam-timer">
+          <div class="timer-circle">
+            <svg class="timer-svg" viewBox="0 0 36 36">
+              <path class="timer-circle-bg"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path class="timer-circle-fill"
+                stroke-dasharray="100, 100"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+            </svg>
+            <span class="timer-text">60:00</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="question-container">
+        <!-- Questions will be dynamically inserted here by JavaScript -->
+      </div>
+      
+      <div class="exam-navigation">
+        <button class="nav-btn btn-outline prev-btn" disabled>
+          <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        
+        <div class="question-indicators">
+          <!-- Generated dynamically by JS -->
+        </div>
+        
+        <button class="nav-btn btn-primary next-btn">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
 
-    <div class="result">
-    </div>
+        <div class="exam-submit">
+          <button class="nav-btn submit-exam btn-danger">
+            <i class="fas fa-paper-plane"></i> Submit Exam
+          </button>
+        </div>
+      </div>
+      
+      <div class="attempt-error"></div>
+    </section>
+
+    <!-- Results Screen -->
+    <section class="results-screen">
+      <div class="results-card">
+        <div class="results-header">
+          <div class="results-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h2 class="results-title">Exam Results</h2>
+        </div>
+        
+        <div class="score-display">
+          <div class="score-circle">
+            <svg class="score-svg" viewBox="0 0 36 36">
+              <path class="score-circle-bg"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path class="score-circle-fill"
+                stroke-dasharray="75, 100"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+            </svg>
+            <div class="score-text">
+              <span class="score-percent">75%</span>
+              <span class="score-grade">Good</span>
+            </div>
+          </div>
+          
+          <div class="score-details">
+            <div class="score-metric">
+              <span class="metric-value correct-count">15</span>
+              <span class="metric-label">Correct</span>
+            </div>
+            <div class="score-metric">
+              <span class="metric-value wrong-count">3</span>
+              <span class="metric-label">Wrong</span>
+            </div>
+            <div class="score-metric">
+              <span class="metric-value unattempted-count">2</span>
+              <span class="metric-label">Unattempted</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="results-feedback">
+          <p class="feedback-text">You scored better than 65% of test takers. Review your incorrect answers to improve!</p>
+        </div>
+        
+        <div class="results-actions">
+          <button class="view-details btn-outline nav-btn last-btn">
+            <i class="fas fa-list-ol"></i> View Detailed Results
+          </button>
+          <button class="new-exam btn-primary nav-btn last-btn">
+            <i class="fas fa-redo"></i> Take Another Exam
+          </button>
+        </div>
+      </div>
+      
+      <div class="detailed-results"> 
+        <!-- Detailed results will be inserted here by JavaScript -->
+      </div>
+    </section>
   </main>
 
-  <script src="JavaScript/exam-room.js" type="module"></script>
+  <script type="module" src="JavaScript/exam-room.js">
+  </script>
 </body>
 </html>

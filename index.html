@@ -3,60 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
+  <title>Omega Exam Portal - Home</title>
   <link rel="icon" href="data/photos/exam-web-icon.png">
   <link rel="stylesheet" href="CSS/shared/header.css">
   <link rel="stylesheet" href="CSS/single/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <div class="page-transition"></div>
+  
+  <header class="sticky-header">
     <div class="logo">
-      <a href="index.html"><img src="data/photos/exam-web-icon.png" alt=""></a>
+      <a href="index.html" class="logo-link">
+        <img src="data/photos/exam-web-icon.png" alt="Omega Exam Logo">
+        <span class="logo-text">Omega Exam</span>
+      </a>
     </div>
 
     <nav>
-      <ul>
-        <li><a href="exam-room.html">Exam Room</a></li>
-        <li><a href="customize.html">Customize</a></li>
+      <ul class="nav-links">
+        <li><a href="exam-room.html" class="nav-link hover-underline btn btn-primary pulse">Exam Room</a></li>
+        <li><a href="customize.html" class="nav-link hover-underline btn btn-secondary">Customize</a></li>
       </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section class="welcome">
-      <h1>Welcome...</h1>
-      <p>to <strong>Omega Online Exam</strong>, a front-end based platform designed to make online exams simple and customizable. On this website, users can not only take exams in the dedicated Exam Room but also create and customize their own questions on the Customize page. Before starting any exam, users are encouraged to read the instructions to ensure a smooth and proper exam experience. This project is proudly developed by <strong>Omega Melese</strong>.</p>
-    </section>
-
-    <section class="general-direction">
-      <div class="quiz-room direction">
-        <p>Here, you can take your exam in a simple and organized way.Please stay focused and avoid refreshing or closing the page during the exam to prevent losing your progress.</p>
-        <a href="exam-room.html" class="page-director">Exam Room</a>
-      </div>
-
-      <div class="customize direction">
-        <p>you can create and edit your own exam questions as you like. You can add new questions, change existing ones, or remove any question you don’t need. Make sure your questions are clear and complete before saving them. After customizing, you can take your personalized exam in the Exam Room</p>
-        <a href="customize.html" class="page-director">Customize</a>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="handle">
-        <img src="data/photos/exam-web-icon.png" alt="">
-
-        <div class="social">
-          <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-word title-word-1">Welcome</span>
+          <span class="title-word title-word-2">To</span>
+          <span class="title-word title-word-3">Omega</span>
+          <span class="title-word title-word-4">Exam</span>
+          <span class="title-word title-word-5">Portal</span>
+        </h1>
+        <p class="hero-text">Your premier platform for seamless online examinations and customizable test creation.</p>
+        <div class="hero-buttons">
+          <a href="exam-room.html" class="btn btn-primary pulse">Start Exam</a>
+          <a href="customize.html" class="btn btn-secondary">Customize</a>
         </div>
-
       </div>
-
-      <div class="copyright">
-        <p class="copyRight">&copy;Omega Online Exam</p>
+      <div class="hero-scroll-indicator">
+        <span class="scroll-text">Scroll Down</span>
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
       </div>
     </section>
+
+    <section class="features-section">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="features-container">
+        <div class="feature-card">
+          <div class="feature-icon exam-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="feature-title">Exam Room</h3>
+          <p class="feature-text">Take exams in a distraction-free environment with real-time progress tracking. Our system prevents accidental navigation away from the test.</p>
+          <a href="exam-room.html" class="feature-link">Enter Exam Room →</a>
+          <div class="feature-highlight"></div>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon customize-icon">
+            <i class="fas fa-edit"></i>
+          </div>
+          <h3 class="feature-title">Customize</h3>
+          <p class="feature-text">Create fully customized exams with our intuitive builder. Add multiple question types, set time limits, and configure scoring.</p>
+          <a href="customize.html" class="feature-link">Start Customizing →</a>
+          <div class="feature-highlight"></div>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon analytics-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">Performance Analytics</h3>
+          <p class="feature-text">Get detailed reports on exam performance with visual analytics to identify strengths and areas for improvement.</p>
+          <a href="#" class="feature-link coming-soon">Coming Soon</a>
+          <div class="feature-highlight"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="section-header">
+        <h2 class="section-title">What Educators Say</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">Omega Exam Portal has transformed how we conduct assessments. The customization options are unparalleled.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div class="author-info">
+                <h4 class="author-name">Dr. Sarah Johnson</h4>
+                <p class="author-title">Professor of Computer Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">The exam interface is so intuitive that even our least tech-savvy students have no trouble navigating it.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div class="author-info">
+                <h4 class="author-name">Michael Chen</h4>
+                <p class="author-title">High School Principal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number" data-count="5000">0</div>
+          <div class="stat-label">Exams Taken</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="1200">0</div>
+          <div class="stat-label">Custom Tests</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="98">0</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="data/photos/exam-web-icon.png" alt="Omega Exam Logo">
+            <span>Omega Exam Portal</span>
+          </a>
+          <p class="footer-about">Innovative online examination platform designed for educators and learners.</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="link-group">
+            <h4 class="link-title">Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="exam-room.html">Exam Room</a></li>
+              <li><a href="customize.html">Customize</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="social-links">
+          <a href="https://x.com" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+        
+        <div class="copyright">
+          <p>&copy; <span id="year"></span> Omega Online Exam. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </main>
+
+  <script src="JavaScript/home.js"></script>
 </body>
 </html>
